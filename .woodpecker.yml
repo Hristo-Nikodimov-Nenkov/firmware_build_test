@@ -4,14 +4,11 @@ when:
 
 steps:
   build:
-    image: docker:27-cli
+    image: rav3nh01m/micropython_esp-idf:test_v1.29.0_v5.5.2
+    environment:
+      - BOARD: ESP32_GENERIC_C3
+      - FREEZE_BOOT: true
+      - FREEZE_MAIN: true
+
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock  
-    commands: |
-      docker run --rm \
-        -e PROJECT_DIR="/project" \
-        -e BOARD=ESP32_GENERIC_C3 \
-        -e FREEZE_BOOT=true \
-        -e FREEZE_MAIN=true \
-        -v $CI_WORKSPACE:/project \
-        rav3nh01m/micropython_esp-idf:test_v1.29.0_v5.5.1
