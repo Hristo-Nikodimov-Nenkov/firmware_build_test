@@ -1,0 +1,13 @@
+when:
+  - event: [push, manual]
+    branch: main
+
+steps:
+  build:
+    commands: docker run --rm \
+      -e PROJECT_DIR="/project" \
+      -e BOARD=ESP32_GENERIC_C3 \
+      -e FREEZE_BOOT=true \
+      -e FREEZE_MAIN=true \
+      -v ./:/project \
+      micropython_esp-idf:test_v1.29.0_v5.5.1
