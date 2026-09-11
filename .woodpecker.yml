@@ -13,5 +13,5 @@ steps:
         -e BOARD=ESP32_GENERIC_C3 \
         -e FREEZE_BOOT=true \
         -e FREEZE_MAIN=true \
-        -v ${CI_WORKSPACE}:/project \
+        -v $CI_WORKSPACE:/project \
         rav3nh01m/micropython_esp-idf:test_v1.29.0_v5.5.1
