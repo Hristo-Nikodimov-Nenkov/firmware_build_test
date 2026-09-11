@@ -6,9 +6,9 @@ steps:
   build:
     image: rav3nh01m/micropython_esp-idf:test_v1.29.0_v5.5.2
     environment:
-      - BOARD: ESP32_GENERIC_C3
-      - FREEZE_BOOT: true
-      - FREEZE_MAIN: true
+      BOARD: ESP32_GENERIC_C3
+      FREEZE_BOOT: true
+      FREEZE_MAIN: true
 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock  
