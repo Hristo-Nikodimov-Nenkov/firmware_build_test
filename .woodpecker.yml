@@ -4,6 +4,9 @@ when:
 
 steps:
   build:
+    image: docker:27-cli
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock  
     commands: docker run --rm \
       -e PROJECT_DIR="/project" \
       -e BOARD=ESP32_GENERIC_C3 \
